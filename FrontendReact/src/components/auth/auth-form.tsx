@@ -75,7 +75,7 @@ export function AuthForm() {
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
-        <CardTitle>Welcome to Skill Swap</CardTitle>
+        <CardTitle>Welcome to SkillXchange</CardTitle>
         <CardDescription>
           {mode === 'login' 
             ? 'Log in to your account'

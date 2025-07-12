@@ -14,7 +14,7 @@ export default function LoginPage() {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-center">Join Skill Swap</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center">Join SkillXchange</h1>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-xl font-semibold mb-4">How it works</h2>
@@ -43,7 +43,7 @@ export default function LoginPage() {
               <div className="flex gap-3">
                 <div className="bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center shrink-0">4</div>
                 <div>
-                  <h3 className="font-medium">Request a skill swap</h3>
+                  <h3 className="font-medium">Request a SkillXchange</h3>
                   <p className="text-muted-foreground text-sm">Send a request and start learning</p>
                 </div>
               </div>

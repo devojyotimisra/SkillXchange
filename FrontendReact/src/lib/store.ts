@@ -3,9 +3,10 @@ import { persist } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';
 import { User, SwapRequest, Feedback, Skill, Availability } from '@/types';
 
-const API = 'https://skz41mcm-5000.inc1.devtunnels.ms/api';
-const API_AUTH = 'https://skz41mcm-5000.inc1.devtunnels.ms/api/auth';
-const API_SKILL = 'https://skz41mcm-5000.inc1.devtunnels.ms/api/skills';
+
+const API = import.meta.env.VITE_API;
+const API_AUTH = `${API}/auth`;
+const API_SKILL = `${API}/skills`;
 
 interface AuthState {
   currentUser: User | null;
@@ -35,7 +36,7 @@ interface UsersState {
   users: User[];
   getPublicUsers: () => User[];
   getUserById: (id: string) => User | undefined;
-  searchUsersBySkill: (skill: string) => User[];
+  searchUsersBySkill: (skill: string) => any;
 }
 
 interface SwapRequestsState {
@@ -388,14 +389,20 @@ export const useUsersStore = create<UsersState>()(
       getUserById: (id) => {
         return get().users.find(user => user.id === id);
       },
-      searchUsersBySkill: (skillQuery) => {
-        const normalizedQuery = skillQuery.toLowerCase();
-        return get().users.filter(user => 
-          user.isPublic && 
-          (user.skillsOffered.some(skill => skill.name.toLowerCase().includes(normalizedQuery)) ||
-           user.skillsWanted.some(skill => skill.name.toLowerCase().includes(normalizedQuery)))
-        );
-      }
+      searchUsersBySkill: async (skillQuery) => {
+        try {
+          const response = await fetch(`${API}/users/search?skill=${encodeURIComponent(skillQuery)}`);
+          
+          if (response.ok) {
+            const data = await response.json();
+            return data.users;
+          }
+          return [];
+        } catch (error) {
+          console.error('Search users failed:', error);
+          return [];
+        }
+      },
     }),
     {
       name: 'users-storage',

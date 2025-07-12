@@ -24,7 +24,7 @@ export function Navbar() {
   return (
     <header className="border-b">
       <div className="container flex items-center justify-between h-16">
-        <Link to="/" className="text-xl font-bold text-primary">Skill Swap</Link>
+        <Link to="/" className="text-xl font-bold text-primary">SkillXchange</Link>
         
         <nav className="hidden md:flex items-center gap-6">
           {isAuthenticated && (

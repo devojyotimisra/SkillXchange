@@ -216,7 +216,7 @@ export default function ProfilePage() {
               
               <TabsContent value="availability" className="space-y-6">
                 <h2 className="text-xl font-semibold mb-4">Your Availability</h2>
-                <p className="text-muted-foreground mb-4">Let others know when you're available for skill swapping.</p>
+                <p className="text-muted-foreground mb-4">Let others know when you're available for SkillXchangeping.</p>
                 <AvailabilitySelector
                   availabilities={currentUser.availability}
                   onChange={updateAvailability}

@@ -16,7 +16,7 @@ export default function SwapsPage() {
   return (
     <Layout requireAuth>
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Your Skill Swaps</h1>
+        <h1 className="text-3xl font-bold mb-8">Your SkillXchanges</h1>
         
         <Tabs defaultValue="received" className="space-y-6">
           <TabsList className="w-full">

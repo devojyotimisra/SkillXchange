@@ -42,7 +42,7 @@ export function SwapRequestModal({ receiver, receiverSkill, trigger }: SwapReque
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Request Skill Swap</DialogTitle>
+          <DialogTitle>Request SkillXchange</DialogTitle>
           <DialogDescription>
             Request to swap your skill with {receiver.name}'s {receiverSkill.name} skill.
           </DialogDescription>

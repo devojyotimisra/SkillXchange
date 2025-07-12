@@ -149,7 +149,7 @@ export function SwapRequestCard({
                 <DialogHeader>
                   <DialogTitle>Leave feedback for {otherUser.name}</DialogTitle>
                   <DialogDescription>
-                    Rate your experience and leave a comment about your skill swap.
+                    Rate your experience and leave a comment about your SkillXchange.
                   </DialogDescription>
                 </DialogHeader>
                 <div className="space-y-4 py-4">

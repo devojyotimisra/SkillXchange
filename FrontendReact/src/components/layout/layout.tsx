@@ -21,7 +21,7 @@ export function Layout({ children, requireAuth = false }: LayoutProps) {
       <main className="flex-1 container py-6">{children}</main>
       <footer className="border-t py-6">
         <div className="container text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Skill Swap Platform
+          &copy; {new Date().getFullYear()} SkillXchange Platform
         </div>
       </footer>
     </div>
