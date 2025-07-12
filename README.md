@@ -1,6 +1,6 @@
-# 🧠💬 Skill Swap: Share a Skill, Gain a Skill
+# 🧠💬 SkillXchange: Share a Skill, Gain a Skill
 
-Hey there, curious human 👋 — welcome to **Skill Swap**, the friendliest corner of the internet where folks exchange talents like Pokémon cards, but with fewer rules and more real-life utility.
+Hey there, curious human 👋 — welcome to **SkillXchange**, the friendliest corner of the internet where folks exchange talents like Pokémon cards, but with fewer rules and more real-life utility.
 
 Whether you're a Photoshop wizard looking to learn Excel, or a baking boss eager to get guitar tips, we got you covered.
 
@@ -8,7 +8,7 @@ Whether you're a Photoshop wizard looking to learn Excel, or a baking boss eager
 
 ## 📚 Table of Contents
 
-1. [✨ What is Skill Swap?](#-what-is-skill-swap)
+1. [✨ What is SkillXchange?](#-what-is-skill-swap)
 2. [👩‍💻 User Features](#-user-features)
 3. [🧪 Local Dev Setup (a.k.a. "Let me break it and fix it myself mode")](#-local-dev-setup-aka-let-me-break-it-and-fix-it-myself-mode)
 
@@ -20,9 +20,9 @@ Whether you're a Photoshop wizard looking to learn Excel, or a baking boss eager
 
 ---
 
-## ✨ What is Skill Swap?
+## ✨ What is SkillXchange?
 
-Skill Swap is a simple (yet powerful!) platform where you can list the **skills you offer**, request the **skills you want**, and arrange swaps with like-minded users. It’s the wholesome barter economy — but for your brain. 🧠⚡
+SkillXchange is a simple (yet powerful!) platform where you can list the **skills you offer**, request the **skills you want**, and arrange swaps with like-minded users. It’s the wholesome barter economy — but for your brain. 🧠⚡
 
 ---
 
