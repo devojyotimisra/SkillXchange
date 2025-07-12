@@ -181,6 +181,8 @@ class GetCurrentUser(Resource):
 
 # User Endpoints
 class GetAllUsers(Resource):
+    @jwt_required()
+    @cache.cached(timeout=60, key_prefix="public_users_list")
     def get(self):
         users = db.session.scalars(
             select(User)
@@ -257,6 +259,50 @@ class UpdateUserProfile(Resource):
             db.session.rollback()
             return {"message": "Profile update failed"}, 500
 
+
+class UpdateUserAvailability(Resource):
+    @jwt_required()
+    def put(self):
+        current_user_id = get_jwt_identity()
+        user = db.session.get(User, current_user_id)
+        if not user:
+            return {"message": "User not found"}, 404
+        
+        parser = reqparse.RequestParser()
+        parser.add_argument("availability", type=str, required=True, help="Availability status is required")
+        data = parser.parse_args()
+        
+        user.availability = data["availability"]
+        user.updated_at = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+        
+        try:
+            db.session.commit()
+            cache.delete("public_users_list")
+            return {"user": user.to_dict()}, 200
+        except Exception as e:
+            db.session.rollback()
+            return {"message": "Failed to update availability"}, 500
+
+
+class TogglePublicProfile(Resource):
+    @jwt_required()
+    def put(self):
+        current_user_id = get_jwt_identity()
+        user = db.session.get(User, current_user_id)
+        if not user:
+            return {"message": "User not found"}, 404
+        
+        user.is_public = not user.is_public
+        user.updated_at = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+        
+        try:
+            db.session.commit()
+            cache.delete("public_users_list")
+            return {"user": user.to_dict()}, 200
+        except Exception as e:
+            db.session.rollback()
+            return {"message": "Failed to toggle public profile"}, 500
+        
 
 # Skills Endpoints
 class AddSkillOffered(Resource):
@@ -546,6 +592,8 @@ api.add_resource(GetAllUsers, "/api/users")
 api.add_resource(GetUserById, "/api/users/<string:user_id>")
 api.add_resource(SearchUsers, "/api/users/search")
 api.add_resource(UpdateUserProfile, "/api/users/profile")
+api.add_resource(UpdateUserAvailability, "/api/users/availability")
+api.add_resource(TogglePublicProfile, "/api/users/toggle-public")
 
 # Skills
 api.add_resource(AddSkillOffered, "/api/skills/offered")
