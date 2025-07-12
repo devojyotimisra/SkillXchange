@@ -106,7 +106,6 @@ class RegisterUser(Resource):
             db.session.add(new_user)
             db.session.commit()
             
-            # Create access token for the new user
             access_token = create_access_token(
                 identity=str(new_user.id),
                 additional_claims={
@@ -268,10 +267,7 @@ class UpdateUserAvailability(Resource):
         if not user:
             return {"message": "User not found"}, 404
         
-        parser = reqparse.RequestParser()
-        parser.add_argument("availability", type=str, required=True, help="Availability status is required")
-        data = parser.parse_args()
-        
+        data = request.json
         user.availability = data["availability"]
         user.updated_at = datetime.now(timezone(timedelta(hours=5, minutes=30)))
         

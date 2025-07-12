@@ -17,9 +17,8 @@ class User(db.Model):
     profile_photo = db.Column(db.String(255), nullable=True, default='default_avatar.png')
 
     is_public = db.Column(db.Boolean, default=True, nullable=False)
-    availability = db.Column(JSON, nullable=True)  # Store availability as JSON
+    availability = db.Column(JSON, nullable=True)
 
-    # Legacy fields (keeping for backward compatibility)
     role = db.Column(db.Enum("admin", "user"), nullable=True)
     status = db.Column(db.Enum("pending", "verified", "blocked"), nullable=True, default="verified")
 
@@ -158,7 +157,7 @@ class Feedback(db.Model):
     from_user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     to_user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    rating = db.Column(db.Integer, nullable=False)  # 1-5 scale
+    rating = db.Column(db.Integer, nullable=False)
     comment = db.Column(Text, nullable=True)
 
     created_at = db.Column(db.DateTime, default=datetime.now(timezone(timedelta(hours=5, minutes=30))))
