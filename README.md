@@ -11,12 +11,11 @@ Whether you're a Photoshop wizard looking to learn Excel, or a baking boss eager
 1. [✨ What is SkillXchange?](#-what-is-skillxchange)
 2. [👩‍💻 User Features](#-user-features)
 3. [🧪 Local Dev Setup (a.k.a. "Let me break it and fix it myself mode")](#-local-dev-setup-aka-let-me-break-it-and-fix-it-myself-mode)
-
-   * [1️⃣ Clone the Repository](#1-clone-the-repository)
-   * [2️⃣ Backend Setup with UV + Flask](#2-backend-setup-with-uv--flask)
-   * [3️⃣ Frontend Setup with React + NPM](#3-frontend-setup-with-react--npm)
-   * [4️⃣ Environment Variables Setup (.env)](#4-environment-variables-setup-env)
-   * [5️⃣ Run the App!](#5-run-the-app)
+   * [1. Clone the Repository](#1-clone-the-repository)
+   * [2. Backend Setup with UV + Flask](#2-backend-setup-with-uv--flask)
+   * [3. Frontend Setup with React + NPM](#3-frontend-setup-with-react--npm)
+   * [4. Environment Variables Setup (.env)](#4-environment-variables-setup-env)
+   * [5. Run the App!](#5-run-the-app)
 4. [🔗 Useful Links](#-useful-links)
 
 ---
@@ -51,7 +50,7 @@ Wanna hack it locally? Let’s roll.
 
 ---
 
-### 1️⃣ Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/devojyotimisra/SkillXchange.git
@@ -62,7 +61,7 @@ Yes, cloning the repo is the sacred first step. Always. ✨
 
 ---
 
-### 2️⃣ Backend Setup with UV + Flask 🐍🔥
+### 2. Backend Setup with UV + Flask 🐍🔥
 
 We’re using [uv](https://github.com/astral-sh/uv) — the new lightning-fast Python package manager ⚡.
 
@@ -77,7 +76,7 @@ uv run flask run
 
 ---
 
-### 3️⃣ Frontend Setup with React + NPM ⚛️📦
+### 3. Frontend Setup with React + NPM ⚛️📦
 
 We love React. We love NPM. You’re gonna love them too.
 
@@ -95,7 +94,7 @@ Boom! Your React frontend is alive at `http://localhost:5173`.
 
 ---
 
-### 4️⃣ Environment Variables Setup (`.env`) 🛠️🔐
+### 4. Environment Variables Setup (`.env`) 🛠️🔐
 
 Before you go all “It’s not working!!”, take a breath — and create a `.env` file in the `BackendFlask` directory. This file contains all your secret spells and configuration vibes 🧙‍♂️🔮
 
@@ -124,7 +123,7 @@ CACHE_REDIS_PORT=6379
 
 ---
 
-### 5️⃣ Run the App!
+### 5. Run the App!
 
 With your backend at `http://localhost:5000` and frontend at `http://localhost:5173`, you're ready to roll.
 
