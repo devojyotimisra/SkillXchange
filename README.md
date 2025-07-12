@@ -111,12 +111,15 @@ SQLALCHEMY_TRACK_MODIFICATIONS=False
 SECRET_KEY="your-secret-key"
 JWT_SECRET_KEY="your-jwt-secret-key"
 
-CELERY_BROKER_URL="redis://localhost:6379/0"    # Replace with actual Redis broker URL if needed
-CELERY_RESULT_BACKEND="redis://localhost:6379/1" # Replace with actual Redis result backend
-
 CACHE_TYPE="RedisCache"
 CACHE_REDIS_HOST="localhost"
 CACHE_REDIS_PORT=6379
+```
+
+Create a file named `.env` and add this inside the `FrontendReact`:
+
+```env
+VITE_API = <link_to_API>
 ```
 
 > ⚠️ **Important**: Replace secret keys and Redis URLs with your actual secure values in production!
@@ -149,3 +152,5 @@ Here are the cool kids’ tables:
 ---
 
 Still here? Go ahead. Run it, build it, break it, fix it, share it. And remember — **someone out there is waiting to swap skills with you.** 🌍🤝
+
+Video:  https://youtu.be/LJ8IPyn7Hgs
