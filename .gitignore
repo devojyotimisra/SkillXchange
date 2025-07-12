@@ -1,0 +1,25 @@
+.env
+.venv
+__pycache__
+instance
+.sqlite3
+**\.sqlite3
+celerybeat-schedule*
+*.rdb
+*.csv
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
+
+# Editor directories and files
+.vscode
+*/.vscode/*
